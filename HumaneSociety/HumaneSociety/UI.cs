@@ -6,23 +6,46 @@ using System.Threading.Tasks;
 
 namespace HumaneSociety
 {
-    class UI
+    public class UI
     {
+        ApplicationForPet appForPet = new ApplicationForPet();
         public void PromptForExchange()
         {
-            Console.WriteLine("Are you planning to adopt or drop off a pet today?");
+            Console.WriteLine("Are you planning to (1)adopt or (2)surrender a pet today?");
+            string choice = Console.ReadLine();
+            if(choice == "1")
+            {
+                GetPetInformationAdopting();
+            }
+            else if(choice == "2")
+            {
+                GetInformationSurrender();
+            }
+            else
+            {
+                Console.WriteLine("Huh?  Try again, this time please choose a provided option");
+            }
         }
-        public void GetPetInformation()
+        public void GetPetInformationAdopting()
         {
-            Console.WriteLine("What kind of animal? (1) Dog, (2) Cat, (3) Bird, (4) Rabbit, and (5) Ferret.");
+            appForPet.AdoptPromptAnimalType();
 
-            Console.WriteLine("What is your price range? Please list the most youre willing to pay.");
+            appForPet.AdoptPromptShots();
 
-            Console.WriteLine("How much food should he/she eat a week?");
+            appForPet.AdoptPromptFeeding();
 
-            Console.WriteLine("How kid friendly? (1) Very, (2) Middle of the road, or (3) Not really.");
+            appForPet.AdoptPromptKids();
 
-            Console.WriteLine("Are you looking for a pet you can hold? (1) Yes (2) No.");
+            appForPet.AdoptPromptHoldingPet();
+        }
+        public void GetInformationSurrender()
+        {
+            appForPet.SurrenderPromptAnimalType();
+
+            appForPet.SurrenderPromptShots();
+
+            appForPet.SurrenderPromptFeeding();
+
         }
 
     }
