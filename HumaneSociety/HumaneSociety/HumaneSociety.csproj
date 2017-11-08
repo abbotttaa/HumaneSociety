@@ -47,6 +47,7 @@
     <Compile Include="ApplicationForPet.cs" />
     <Compile Include="Birds.cs" />
     <Compile Include="Cats.cs" />
+    <Compile Include="CommandSQL.cs" />
     <Compile Include="DatabaseManagment.cs" />
     <Compile Include="Dogs.cs" />
     <Compile Include="Ferrets.cs" />
