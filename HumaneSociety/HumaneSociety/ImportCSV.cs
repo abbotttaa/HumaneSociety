@@ -8,14 +8,12 @@ using System.IO;
 
 namespace HumaneSociety
 {
-    class Rabbits : Animal
+    class ImportCSV
     {
-        public string species;
-
-
-        public Rabbits(string species)
+       public void ImportNewCsv()
         {
-            this.species = species;
+            FileStream thisFile = new FileStream("../../inmateTransferList.csv", FileMode.Open);
+            StreamReader sr = new StreamReader(thisFile);
         }
     }
 }
